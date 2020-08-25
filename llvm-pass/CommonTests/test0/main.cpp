@@ -16,7 +16,7 @@ int multfoo(int a, int b) {
 int main() {
 	cout << "Hello World!" << endl;
 	cout << doublefoo(3) << endl;
-	cout << minusfoo(4, 2) << endl;
+	cout << minusfoo(4, 2) + multfoo(3, 3) << endl;
 	cout << multfoo(2, 6) << endl;
 	return 0;
 }
