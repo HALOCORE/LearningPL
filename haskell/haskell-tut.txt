@@ -1,0 +1,13 @@
+====== in ghci ======
+let num7 = 7
+let getTriple x = x * 3
+
+====== in ghci ======
+:l haskell-tut  //load
+:r              //reload
+
+use  :t sqrt  to see sqrt's type on ghci command line
+also  :t (+)
+
+====== on commandline ======
+ghc --make haskell-tut      //compile

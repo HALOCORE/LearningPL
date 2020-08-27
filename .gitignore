@@ -1,3 +1,7 @@
+haskell/haskell-tut
+*.hi
+# --------------------------------
+
 # Prerequisites
 *.d
 
