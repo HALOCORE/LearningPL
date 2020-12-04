@@ -4,6 +4,9 @@ import System.IO
 
 import System.Random
 
+randnum :: (Int, StdGen)
+randnum = random (mkStdGen 100) :: (Int, StdGen)
+
 add :: [String] -> IO ()  
 add [fileName, todoItem] = appendFile fileName (todoItem ++ "\n")  
 
