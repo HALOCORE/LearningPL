@@ -1,11 +1,23 @@
 import Data.Char
 import Control.Monad  
 import System.IO
+import System.Environment
+import System.IO.Error
+
+import qualified Data.ByteString.Lazy as B
 
 import System.Random
 
+strpacked :: B.ByteString
+strpacked = B.pack [99,97,110]
+
 randnum :: (Int, StdGen)
 randnum = random (mkStdGen 100) :: (Int, StdGen)
+
+myRandomGen :: (Random a, RandomGen t) => t -> [a]
+myRandomGen oldgen = let (value, newgen) = random oldgen in value : myRandomGen newgen
+
+rand5 = take 5 $ myRandomGen (mkStdGen 200) :: [Float]
 
 add :: [String] -> IO ()  
 add [fileName, todoItem] = appendFile fileName (todoItem ++ "\n")  
